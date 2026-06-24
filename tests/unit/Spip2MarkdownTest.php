@@ -107,6 +107,12 @@ final class Spip2MarkdownTest extends TestCase
         $this->assertEquals("\n1. item", spip2markdown_listes_ordonnees('-# item'));
     }
 
+    public function testListeOrdonneeNiveau1ApresSaut(): void
+    {
+        // Régression ${1} : sans le fix, groupe 1 (\n) était perdu → \n1. au lieu de \n\n1.
+        $this->assertEquals("texte\n\n1. item", spip2markdown_listes_ordonnees("texte\n-# item"));
+    }
+
     public function testListeOrdonneeNiveau2(): void
     {
         $this->assertEquals('    1. sous-item', spip2markdown_listes_ordonnees('-## sous-item'));

@@ -191,7 +191,7 @@ function spip2markdown_listes_non_ordonnees($text) {
 function spip2markdown_listes_ordonnees($text) {
   // SPIP     : -# en premier niveau, -## pour second niveau, etc.
   // Kramdown : 1. avec indentations par multiples de 4 espaces
-  $text = preg_replace("/(^|\n)-# /u", "\n${1}1. ", $text);
+  $text = preg_replace("/(^|\n)-# /u", "\n\${1}1. ", $text);
   $text = preg_replace("/\n1\. ([^\n]*)\n\n1\. /u", "\n1. $1\n1. ", $text); // retrait des retours chariot en trop
   $text = preg_replace("/\n1\. ([^\n]*)\n\n1\. /u", "\n1. $1\n1. ", $text); // retrait des retours chariot en trop
   $text = preg_replace("/(^|\n)-## /u", "$1    1. ", $text);
