@@ -1,0 +1,14 @@
+{
+    "name": "epilibre/spip2markdown",
+    "description": "Convertisseur SPIP → Markdown",
+    "type": "spip-plugin",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
